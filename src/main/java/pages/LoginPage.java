@@ -19,6 +19,8 @@ public class LoginPage extends BasePage {
     private WebElement logInButton;
     @FindBy(xpath = "//p[@class='smallText']")
     private WebElement loginMessage;
+    @FindBy(xpath = "//p[text()='The username and password could not be verified.']")
+    private WebElement usernameErrorMessage;
     public LoginPage(WebDriver driver) {
         super(driver);
     }
@@ -36,6 +38,11 @@ public class LoginPage extends BasePage {
         logInButton.click();
     }
     public boolean isLoginMessageDisplayed(){
+        wait.until(ExpectedConditions.visibilityOf(loginMessage));
         return loginMessage.isDisplayed();
+    }
+    public boolean isUsernameErrorMessageDisplayed(){
+        wait.until(ExpectedConditions.visibilityOf(usernameErrorMessage));
+        return usernameErrorMessage.isDisplayed();
     }
 }

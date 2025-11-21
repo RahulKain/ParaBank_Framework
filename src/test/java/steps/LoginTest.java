@@ -58,6 +58,7 @@ public class LoginTest {
 
         @Then("a generic login error message should be displayed")
         public void a_generic_login_error_message_should_be_displayed() {
+        loginPage.isLoginMessageDisplayed();
            System.out.println("Login Error");
         }
     }

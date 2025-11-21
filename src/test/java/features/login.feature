@@ -14,8 +14,7 @@ Feature: ParaBank Login
 
 
   Scenario: TC_LOG_002 Login with Invalid Credentials
-    When User is on the ParaBank L
-  og In page
+    Given User is on the ParaBank Log In page
     And User enters the Invalid Username and Password
     And I click the Log In button
     Then a generic login error message should be displayed
